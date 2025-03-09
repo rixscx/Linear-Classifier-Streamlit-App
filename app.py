@@ -69,7 +69,7 @@ st.markdown("""
         box-shadow: 0px 0px 10px rgba(255, 0, 0, 0.7);
         transform: scale(1.02);
     }
-    /* Fork Button - Proper Alignment and Styling */
+    /* GitHub Button - Redirect to Main Repo */
     .github-btn {
         position: fixed;
         top: 20px;
@@ -96,11 +96,11 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# GitHub Fork Button (Enhanced)
+# GitHub Button (Redirect to Main Repository)
 st.markdown("""
 <div class="github-btn">
-    <a href="https://github.com/rixscx/Linear-Classifier-Streamlit-App/fork" target="_blank">
-        🚀 Fork this Project
+    <a href="https://github.com/rixscx/Linear-Classifier-Streamlit-App/tree/main" target="_blank">
+        🚀 View Project on GitHub
     </a>
 </div>
 """, unsafe_allow_html=True)
