@@ -52,16 +52,50 @@ st.markdown('<h1 class="stTitle">Understanding Input Values</h1>', unsafe_allow_
 # Define the local path for images
 IMAGE_DIR = "Images"
 
-# Information sections with local images
+# Information sections with local images and detailed descriptions
 info_data = [
-    ("Pregnancies", "Number of times a woman has been pregnant. For males, keep it at 0.", "pregnancies.png"),
-    ("Glucose Level", "Blood sugar concentration measured in mg/dL. Normal range: 70-140.", "glucose.png"),
-    ("Blood Pressure", "Systolic blood pressure (mm Hg). Normal: 80-120.", "blood_pressure.png"),
-    ("Skin Thickness", "Triceps skin fold thickness (mm), indicating body fat percentage.", "skin_thickness.jpg"),
-    ("Insulin Level", "Insulin in blood (µU/mL). Normal range: 15-276.", "insulin.png"),
-    ("BMI", "Body Mass Index (kg/m²). Normal: 18.5-24.9.", "bmi.png"),
-    ("Diabetes Pedigree Function", "A score indicating genetic diabetes risk (0.0-2.5).", "pedigree.png"),
-    ("Age", "Age in years. Higher age increases diabetes risk.", "age.jpg")
+    ("Pregnancies", 
+     "This represents the number of times a woman has been pregnant. Pregnancy is linked with temporary changes in glucose levels due to hormonal shifts. "
+     "Women with multiple pregnancies may have a higher risk of developing gestational diabetes, which can increase the likelihood of type 2 diabetes later in life. "
+     "For males, this value should be kept at 0.", 
+     "pregnancies.png"),
+    
+    ("Glucose Level", 
+     "Glucose is the main sugar found in blood and is the body’s primary energy source. The measurement here represents fasting blood glucose levels in mg/dL. "
+     "A normal range is typically between 70-140 mg/dL. Higher levels may indicate insulin resistance or diabetes, while lower levels could point to hypoglycemia.", 
+     "glucose.png"),
+    
+    ("Blood Pressure", 
+     "Blood pressure measures the force of blood pushing against artery walls. The value recorded is systolic pressure (mm Hg), the higher number in a BP reading. "
+     "A normal range is 80-120 mm Hg. Chronic high blood pressure (hypertension) is a risk factor for diabetes-related complications such as kidney damage and heart disease.", 
+     "blood_pressure.png"),
+    
+    ("Skin Thickness", 
+     "This measures the thickness of the skinfold at the triceps in millimeters (mm). It is an indicator of subcutaneous fat and is often used to estimate body fat percentage. "
+     "Higher values suggest increased fat accumulation, which is associated with obesity and a higher risk of insulin resistance and type 2 diabetes.", 
+     "skin_thickness.jpg"),
+    
+    ("Insulin Level", 
+     "Insulin is a hormone produced by the pancreas that regulates blood sugar levels. The value here represents insulin levels in the blood, measured in µU/mL. "
+     "A normal fasting insulin level ranges from 15-276 µU/mL. Low levels indicate type 1 diabetes or pancreatic dysfunction, while elevated levels suggest insulin resistance, "
+     "a hallmark of type 2 diabetes.", 
+     "insulin.png"),
+    
+    ("BMI (Body Mass Index)", 
+     "BMI is a measure of body fat based on height and weight. It is calculated as weight (kg) divided by height (m²). "
+     "A normal BMI ranges between 18.5-24.9. A BMI above 25 is considered overweight, and over 30 is classified as obese, both of which significantly increase the risk of diabetes. "
+     "Maintaining a healthy BMI can lower the risk of insulin resistance and metabolic disorders.", 
+     "bmi.png"),
+    
+    ("Diabetes Pedigree Function", 
+     "This is a calculated value that estimates the genetic predisposition to diabetes. It is a score ranging from 0.0 to 2.5, with higher values indicating greater genetic risk. "
+     "It considers family history and other hereditary factors influencing diabetes development. A higher score suggests a stronger likelihood of diabetes in individuals with a family history.", 
+     "pedigree.png"),
+    
+    ("Age", 
+     "Age is a significant factor in diabetes risk. As people get older, the risk of developing diabetes increases due to factors such as reduced insulin sensitivity and increased body fat. "
+     "While diabetes can occur at any age, individuals over 45 are at higher risk. A healthy lifestyle can help delay or prevent age-related diabetes onset.", 
+     "age.jpg")
 ]
 
 # Display sections dynamically
