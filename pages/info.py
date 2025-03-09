@@ -1,65 +1,76 @@
 import streamlit as st
 
-# Set page config
-st.set_page_config(page_title="Understanding Diabetes Inputs", page_icon="📊", layout="centered")
+# Set page configuration
+st.set_page_config(page_title="Diabetes Input Guide", page_icon="📘", layout="centered")
 
-st.title("📊 Understanding Diabetes Inputs")
-st.write("""
-This page explains each input parameter needed for diabetes prediction, along with methods to measure or calculate them.  
-""")
+# Apply modern UI with neon-glass effect
+st.markdown("""
+    <style>
+    body {
+        background-color: #0d0d0d;
+        color: #e0e0e0;
+        font-family: 'Arial', sans-serif;
+    }
+    .stApp {
+        background-color: #141414;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 20px rgba(139, 0, 0, 0.5);
+    }
+    .info-container {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 15px rgba(255, 0, 0, 0.5);
+        backdrop-filter: blur(10px);
+        text-align: left;
+    }
+    .stTitle {
+        color: #FF4500;
+        text-align: center;
+        font-size: 30px;
+        font-weight: bold;
+        text-shadow: 2px 2px 10px rgba(255, 69, 0, 0.8);
+    }
+    .stMarkdown {
+        font-size: 18px;
+        line-height: 1.6;
+    }
+    </style>
+""", unsafe_allow_html=True)
 
-st.markdown("## 🔍 **1. Pregnancies**")
-st.write("""
-- **Definition:** Number of times a person has been pregnant.
-- **Why It Matters:** Higher pregnancies increase diabetes risk.
-""")
+# Title
+st.markdown('<h1 class="stTitle">Understanding Input Values</h1>', unsafe_allow_html=True)
 
-st.markdown("## 🍬 **2. Glucose Level**")
-st.write("""
-- **Definition:** Blood sugar concentration (mg/dL).
-- **Normal Range:** 70-99 mg/dL (Fasting).
-- **How to Measure:** Use a **glucose meter** or lab test.
-""")
+st.markdown("""
+<div class="info-container">
+    <h3>Pregnancies</h3>
+    <p>Number of times a woman has been pregnant. For males, keep it at 0.</p>
+    
+    <h3>Glucose Level</h3>
+    <p>Blood sugar concentration measured in mg/dL. Normal range: 70-140.</p>
+    
+    <h3>Blood Pressure</h3>
+    <p>Systolic blood pressure (mm Hg). Normal: 80-120.</p>
+    
+    <h3>Skin Thickness</h3>
+    <p>Triceps skin fold thickness (mm), indicating body fat percentage.</p>
+    
+    <h3>Insulin Level</h3>
+    <p>Insulin in blood (µU/mL). Normal range: 15-276.</p>
+    
+    <h3>BMI</h3>
+    <p>Body Mass Index (kg/m²). Normal: 18.5-24.9.</p>
+    
+    <h3>Diabetes Pedigree Function</h3>
+    <p>A score indicating genetic diabetes risk (0.0-2.5).</p>
+    
+    <h3>Age</h3>
+    <p>Age in years. Higher age increases diabetes risk.</p>
+</div>
+""", unsafe_allow_html=True)
 
-st.markdown("## 💓 **3. Blood Pressure**")
-st.write("""
-- **Definition:** Pressure of circulating blood against artery walls.
-- **Normal Range:** 90/60 - 120/80 mmHg.
-- **How to Measure:** Use a **BP monitor**.
-""")
-
-st.markdown("## 🏋️ **4. BMI (Body Mass Index)**")
-st.write("""
-- **Formula:** `BMI = Weight (kg) / Height² (m²)`.
-- **Healthy Range:** 18.5 - 24.9.
-- **Why It Matters:** Higher BMI means increased diabetes risk.
-""")
-
-st.markdown("## 💉 **5. Insulin Level**")
-st.write("""
-- **Definition:** Amount of insulin in the blood (µU/mL).
-- **Normal Range:** 2-25 µU/mL.
-- **How to Measure:** Blood test.
-""")
-
-st.markdown("## 🧬 **6. Diabetes Pedigree Function**")
-st.write("""
-- **Definition:** Probability of diabetes based on family history.
-- **Scale:** 0 (Low) - 2.5 (High).
-""")
-
-st.markdown("## 🎂 **7. Age**")
-st.write("""
-- **Diabetes risk increases after age 35.**
-- **Younger individuals with high BMI and glucose are also at risk.**
-""")
-
-st.markdown("## 🏥 **When to Visit a Doctor?**")
-st.write("""
-- **🚨 If your Glucose is consistently over 140 mg/dL.**
-- **🚨 If your BMI is above 30 (Obese category).**
-- **🚨 If your Diabetes Prediction result is High Risk.**
-- **🔍 Regular checkups can help in early detection and management.**
-""")
-
-st.markdown("### 🔙 [Go Back to Prediction](app.py)")
+st.markdown("""
+    <br>
+    <h2 style="color:#FF4500; text-align:center;">⚠️ If glucose, insulin, or BMI is high, consult a doctor.</h2>
+""", unsafe_allow_html=True)
