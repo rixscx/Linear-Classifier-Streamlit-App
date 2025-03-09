@@ -6,31 +6,54 @@ import numpy as np
 with open("diabetes_model.pkl", "rb") as model_file:
     model = pickle.load(model_file)
 
-# Streamlit App UI
-st.set_page_config(page_title="Diabetes Prediction", page_icon="🩺", layout="centered")
+# Set page configuration
+st.set_page_config(page_title="Diabetes Prediction", page_icon="⚕️", layout="centered")
 
-# Custom CSS for enhanced styling
+# Apply dark theme with custom styling
 st.markdown("""
     <style>
     body {
-        background-color: #f5f5f5;
-        color: #333333;
+        background-color: #0d0d0d;
+        color: #e0e0e0;
+        font-family: 'Arial', sans-serif;
     }
     .stApp {
-        background-color: white;
-        padding: 20px;
+        background-color: #141414;
+        padding: 30px;
         border-radius: 10px;
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.3);
+    }
+    .stTitle {
+        color: #00ffff;
+        text-align: center;
+        font-size: 36px;
+        font-weight: bold;
+        text-shadow: 2px 2px 5px rgba(0, 255, 255, 0.5);
+    }
+    .stMarkdown {
+        color: #a0a0a0;
+        text-align: center;
     }
     .stButton>button {
-        background-color: #4CAF50;
-        color: white;
+        background-color: #00ffff;
+        color: black;
         font-size: 18px;
-        padding: 10px;
+        padding: 12px;
         border-radius: 5px;
+        transition: 0.3s;
+        font-weight: bold;
+        width: 100%;
     }
     .stButton>button:hover {
-        background-color: #45a049;
+        background-color: #009999;
+        color: white;
+    }
+    input[type="number"] {
+        background-color: #222;
+        color: #00ffff;
+        border-radius: 5px;
+        border: 1px solid #00ffff;
+        padding: 8px;
     }
     .github-btn {
         display: flex;
@@ -40,21 +63,21 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# GitHub Fork Button
+# GitHub Fork Button (with dark mode style)
 st.markdown("""
 <div class="github-btn">
     <a href="https://github.com/rixscx/Linear-Classifier-Streamlit-App/fork" target="_blank">
-        <img src="https://img.shields.io/github/forks/rixscx/Linear-Classifier-Streamlit-App?style=social" alt="Fork me on GitHub">
+        <img src="https://img.shields.io/github/forks/rixscx/Linear-Classifier-Streamlit-App?style=social&label=Fork%20on%20GitHub" alt="Fork me on GitHub">
     </a>
 </div>
 """, unsafe_allow_html=True)
 
-# Title with emoji
-st.title("🔬 Diabetes Prediction App")
+# Title
+st.markdown('<h1 class="stTitle">Diabetes Prediction AI</h1>', unsafe_allow_html=True)
 
-st.write("Enter the details below to check the **likelihood of diabetes**.")
+st.markdown('<p class="stMarkdown">Fill in the details below to predict the likelihood of diabetes.</p>', unsafe_allow_html=True)
 
-# Create input fields using st.columns() for better layout
+# Input layout
 col1, col2 = st.columns(2)
 
 with col1:
@@ -80,10 +103,10 @@ if st.button("🔍 Predict Diabetes"):
     # Display result with emoji
     st.subheader("Prediction Result:")
     if prediction[0] == 1:
-        st.error("🚨 High Risk: The person **may have diabetes**.")
+        st.error("🚨 **High Risk:** The person **may have diabetes**.")
     else:
-        st.success("✅ Low Risk: The person **is unlikely to have diabetes**.")
+        st.success("✅ **Low Risk:** The person **is unlikely to have diabetes**.")
 
 # Footer
 st.markdown("---")
-st.markdown("💡 *This AI-powered tool helps in predicting diabetes based on medical attributes.*")
+st.markdown('<p style="text-align:center; color:#888;">Developed by AI | Open-source on GitHub</p>', unsafe_allow_html=True)
