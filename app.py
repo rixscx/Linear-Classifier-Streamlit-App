@@ -7,7 +7,7 @@ with open("diabetes_model.pkl", "rb") as model_file:
     model = pickle.load(model_file)
 
 # Set page configuration
-st.set_page_config(page_title="Diabetes Prediction", page_icon="⚕️", layout="centered")
+st.set_page_config(page_title="Diabetes Prediction", page_icon="⚕️", layout="wide")
 
 # Apply dark crimson red theme with seamless hover effects
 st.markdown("""
@@ -32,6 +32,7 @@ st.markdown("""
         font-weight: bold;
         text-shadow: 2px 2px 8px rgba(139, 0, 0, 0.8);
         transition: 0.3s ease-in-out;
+        margin-top: 30px;
     }
     .stTitle:hover {
         text-shadow: 2px 2px 15px rgba(255, 0, 0, 0.9);
@@ -69,23 +70,25 @@ st.markdown("""
         box-shadow: 0px 0px 10px rgba(255, 0, 0, 0.7);
         transform: scale(1.02);
     }
-    /* Fork Button - Proper Alignment and Styling */
+    /* Fork Button - Professionally Aligned */
     .github-btn {
         position: absolute;
-        top: 20px;
-        right: 20px;
+        top: 15px;
+        right: 25px;
         background-color: #111;
-        padding: 10px 15px;
+        padding: 12px 18px;
         border-radius: 8px;
         box-shadow: 0px 0px 10px rgba(139, 0, 0, 0.6);
-        transition: 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+        border: 1px solid #8B0000;
     }
     .github-btn:hover {
         transform: scale(1.1);
         box-shadow: 0px 0px 15px rgba(255, 0, 0, 0.9);
+        border: 1px solid #ff0000;
     }
     .github-btn a {
-        color: #8B0000;
+        color: #ff4d4d;
         font-size: 16px;
         font-weight: bold;
         text-decoration: none;
@@ -96,7 +99,7 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# GitHub Fork Button (Enhanced)
+# GitHub Fork Button (Enhanced Alignment)
 st.markdown("""
 <div class="github-btn">
     <a href="https://github.com/rixscx/Linear-Classifier-Streamlit-App/fork" target="_blank">
@@ -105,7 +108,7 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-# Title
+# Title - Now correctly positioned
 st.markdown('<h1 class="stTitle">Diabetes Prediction AI</h1>', unsafe_allow_html=True)
 
 st.markdown('<p class="stMarkdown">Fill in the details below to predict the likelihood of diabetes.</p>', unsafe_allow_html=True)
