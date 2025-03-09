@@ -52,6 +52,14 @@ st.markdown('<h1 class="stTitle">Understanding Input Values</h1>', unsafe_allow_
 # Define the local path for images
 IMAGE_DIR = "Images"
 
+# Debugging - Print working directory and available files
+st.write("📂 **Current Working Directory:**", os.getcwd())
+
+if os.path.exists(IMAGE_DIR):
+    st.write("📁 **Available Images:**", os.listdir(IMAGE_DIR))
+else:
+    st.error(f"🚨 Directory not found: {IMAGE_DIR}")
+
 # Information sections with local images
 info_data = [
     ("Pregnancies", "Number of times a woman has been pregnant. For males, keep it at 0.", "pregnancies.png"),
