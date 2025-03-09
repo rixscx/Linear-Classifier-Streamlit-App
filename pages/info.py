@@ -67,7 +67,7 @@ info_data = [
 # Display sections dynamically
 for title, description, image_name in info_data:
     image_path = os.path.join(IMAGE_DIR, image_name)
-    
+
     st.markdown(f"""
     <div class="info-container">
         <h3>{title}</h3>
@@ -75,7 +75,11 @@ for title, description, image_name in info_data:
     </div>
     """, unsafe_allow_html=True)
     
-    st.image(image_path, use_container_width=True, caption=f"{title} Representation")
+    # Check if the image exists before displaying it
+    if os.path.exists(image_path):
+        st.image(image_path, use_container_width=True, caption=f"{title} Representation")
+    else:
+        st.warning(f"⚠️ Image not found: {image_path}")
 
 # Final health warning
 st.markdown("""
