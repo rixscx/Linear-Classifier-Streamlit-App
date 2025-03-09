@@ -9,7 +9,7 @@ with open("diabetes_model.pkl", "rb") as model_file:
 # Set page configuration
 st.set_page_config(page_title="Diabetes Prediction", page_icon="⚕️", layout="centered")
 
-# Apply dark crimson red theme with hover effects
+# Apply dark crimson red theme with seamless hover effects
 st.markdown("""
     <style>
     /* Background and Text */
@@ -69,20 +69,38 @@ st.markdown("""
         box-shadow: 0px 0px 10px rgba(255, 0, 0, 0.7);
         transform: scale(1.02);
     }
-    /* GitHub Fork Button */
+    /* Fork Button - Proper Alignment and Styling */
     .github-btn {
-        display: flex;
-        justify-content: right;
-        margin-bottom: -20px;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background-color: #111;
+        padding: 10px 15px;
+        border-radius: 8px;
+        box-shadow: 0px 0px 10px rgba(139, 0, 0, 0.6);
+        transition: 0.3s ease-in-out;
+    }
+    .github-btn:hover {
+        transform: scale(1.1);
+        box-shadow: 0px 0px 15px rgba(255, 0, 0, 0.9);
+    }
+    .github-btn a {
+        color: #8B0000;
+        font-size: 16px;
+        font-weight: bold;
+        text-decoration: none;
+    }
+    .github-btn a:hover {
+        color: #ff0000;
     }
     </style>
 """, unsafe_allow_html=True)
 
-# GitHub Fork Button (Dark Mode Style)
+# GitHub Fork Button (Enhanced)
 st.markdown("""
 <div class="github-btn">
     <a href="https://github.com/rixscx/Linear-Classifier-Streamlit-App/fork" target="_blank">
-        <img src="https://img.shields.io/github/forks/rixscx/Linear-Classifier-Streamlit-App?style=social&label=Fork%20on%20GitHub&color=darkred" alt="Fork me on GitHub">
+        🚀 Fork this Project
     </a>
 </div>
 """, unsafe_allow_html=True)
