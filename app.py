@@ -108,7 +108,12 @@ st.markdown("""
 # Title
 st.markdown('<h1 class="stTitle">Diabetes Prediction AI</h1>', unsafe_allow_html=True)
 
-st.markdown('<p class="stMarkdown">Fill in the details below to predict the likelihood of diabetes.</p>', unsafe_allow_html=True)
+st.write("Fill in the details below to predict the **likelihood of diabetes.**")
+
+# Sidebar - Help Button
+st.sidebar.title("ℹ️ More Info")
+if st.sidebar.button("Learn About Inputs"):
+    st.switch_page("info.py")
 
 # Input layout
 col1, col2 = st.columns(2)
@@ -137,5 +142,6 @@ if st.button("🔍 Predict Diabetes"):
     st.subheader("Prediction Result:")
     if prediction[0] == 1:
         st.error("🚨 **High Risk:** The person **may have diabetes**.")
+        st.warning("⚠️ **Recommendation:** Please consult a doctor for further tests and guidance.")
     else:
         st.success("✅ **Low Risk:** The person **is unlikely to have diabetes**.")
