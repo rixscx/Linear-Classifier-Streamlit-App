@@ -69,51 +69,11 @@ st.markdown("""
         box-shadow: 0px 0px 10px rgba(255, 0, 0, 0.7);
         transform: scale(1.02);
     }
-    /* Fork Button - Proper Alignment and Styling */
-    .github-btn {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        background-color: #111;
-        padding: 10px 15px;
-        border-radius: 8px;
-        box-shadow: 0px 0px 10px rgba(139, 0, 0, 0.6);
-        transition: 0.3s ease-in-out;
-    }
-    .github-btn:hover {
-        transform: scale(1.1);
-        box-shadow: 0px 0px 15px rgba(255, 0, 0, 0.9);
-    }
-    .github-btn a {
-        color: #8B0000;
-        font-size: 16px;
-        font-weight: bold;
-        text-decoration: none;
-    }
-    .github-btn a:hover {
-        color: #ff0000;
-    }
     </style>
-""", unsafe_allow_html=True)
-
-# GitHub Fork Button (Enhanced)
-st.markdown("""
-<div class="github-btn">
-    <a href="https://github.com/rixscx/Linear-Classifier-Streamlit-App/fork" target="_blank">
-        🚀 Fork this Project
-    </a>
-</div>
 """, unsafe_allow_html=True)
 
 # Title
 st.markdown('<h1 class="stTitle">Diabetes Prediction AI</h1>', unsafe_allow_html=True)
-
-st.write("Fill in the details below to predict the **likelihood of diabetes.**")
-
-# Sidebar - Help Button (Fixed)
-st.sidebar.title("ℹ️ More Info")
-if st.sidebar.button("Learn About Inputs"):
-    st.markdown("[Click here to understand input values](https://github.com/rixscx/Linear-Classifier-Streamlit-App/blob/main/info.py)")
 
 # Input layout
 col1, col2 = st.columns(2)
@@ -141,7 +101,6 @@ if st.button("🔍 Predict Diabetes"):
     # Display result with emoji
     st.subheader("Prediction Result:")
     if prediction[0] == 1:
-        st.error("🚨 **High Risk:** The person **may have diabetes**.")
-        st.warning("⚠️ **Recommendation:** Please consult a doctor for further tests and guidance.")
+        st.error("🚨 **High Risk:** The person **may have diabetes**. Consider consulting a doctor.")
     else:
         st.success("✅ **Low Risk:** The person **is unlikely to have diabetes**.")
