@@ -36,6 +36,15 @@ st.markdown("""
         font-size: 18px;
         line-height: 1.6;
     }
+    .image-container {
+        text-align: center;
+        margin: 20px 0;
+    }
+    .image-caption {
+        text-align: center;
+        font-size: 14px;
+        color: #b0b0b0;
+    }
     </style>
 """, unsafe_allow_html=True)
 
@@ -46,25 +55,57 @@ st.markdown("""
 <div class="info-container">
     <h3>Pregnancies</h3>
     <p>Number of times a woman has been pregnant. For males, keep it at 0.</p>
-    
+</div>
+""", unsafe_allow_html=True)
+st.image("https://www.link-to-pregnancy-image.com", use_column_width=True, caption="Pregnancy Count Representation")
+
+st.markdown("""
+<div class="info-container">
     <h3>Glucose Level</h3>
     <p>Blood sugar concentration measured in mg/dL. Normal range: 70-140.</p>
-    
+</div>
+""", unsafe_allow_html=True)
+st.image("https://www.link-to-glucose-image.com", use_column_width=True, caption="Glucose Level Indicator")
+
+st.markdown("""
+<div class="info-container">
     <h3>Blood Pressure</h3>
     <p>Systolic blood pressure (mm Hg). Normal: 80-120.</p>
-    
+</div>
+""", unsafe_allow_html=True)
+st.image("https://www.link-to-bloodpressure-image.com", use_column_width=True, caption="Blood Pressure Measurement")
+
+st.markdown("""
+<div class="info-container">
     <h3>Skin Thickness</h3>
     <p>Triceps skin fold thickness (mm), indicating body fat percentage.</p>
-    
+</div>
+""", unsafe_allow_html=True)
+
+st.markdown("""
+<div class="info-container">
     <h3>Insulin Level</h3>
     <p>Insulin in blood (µU/mL). Normal range: 15-276.</p>
-    
+</div>
+""", unsafe_allow_html=True)
+
+st.markdown("""
+<div class="info-container">
     <h3>BMI</h3>
     <p>Body Mass Index (kg/m²). Normal: 18.5-24.9.</p>
-    
+</div>
+""", unsafe_allow_html=True)
+st.image("https://www.link-to-bmi-image.com", use_column_width=True, caption="BMI Chart")
+
+st.markdown("""
+<div class="info-container">
     <h3>Diabetes Pedigree Function</h3>
     <p>A score indicating genetic diabetes risk (0.0-2.5).</p>
-    
+</div>
+""", unsafe_allow_html=True)
+
+st.markdown("""
+<div class="info-container">
     <h3>Age</h3>
     <p>Age in years. Higher age increases diabetes risk.</p>
 </div>
