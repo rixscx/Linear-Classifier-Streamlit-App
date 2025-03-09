@@ -4,38 +4,38 @@ import os
 # Set page configuration
 st.set_page_config(page_title="Diabetes Input Guide", page_icon="📘", layout="centered")
 
-# Apply modern UI with neon-glass effect
+# Apply modern UI with sleek glass effect
 st.markdown("""
     <style>
     body {
-        background-color: #0d0d0d;
+        background-color: #121212;
         color: #e0e0e0;
         font-family: 'Arial', sans-serif;
     }
     .stApp {
-        background-color: #141414;
+        background-color: #1e1e1e;
         padding: 30px;
-        border-radius: 10px;
-        box-shadow: 0px 0px 20px rgba(139, 0, 0, 0.5);
+        border-radius: 12px;
+        box-shadow: 0px 0px 20px rgba(255, 69, 0, 0.5);
     }
     .info-container {
-        background: rgba(255, 255, 255, 0.1);
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0px 0px 15px rgba(255, 0, 0, 0.5);
-        backdrop-filter: blur(10px);
+        background: rgba(255, 255, 255, 0.08);
+        padding: 18px;
+        border-radius: 12px;
+        box-shadow: 0px 0px 12px rgba(255, 69, 0, 0.5);
+        backdrop-filter: blur(8px);
         text-align: left;
-        margin-bottom: 20px;
+        margin-bottom: 18px;
     }
     .stTitle {
-        color: #FF4500;
+        color: #FF6347;
         text-align: center;
-        font-size: 30px;
+        font-size: 32px;
         font-weight: bold;
-        text-shadow: 2px 2px 10px rgba(255, 69, 0, 0.8);
+        text-shadow: 2px 2px 12px rgba(255, 99, 71, 0.8);
     }
     .stMarkdown {
-        font-size: 18px;
+        font-size: 17px;
         line-height: 1.6;
     }
     .image-caption {
@@ -77,7 +77,7 @@ for title, description, image_name in info_data:
     
     # Check if the image exists before displaying it
     if os.path.exists(image_path):
-        st.image(image_path, use_container_width=True, caption=f"{title} Representation")
+        st.image(image_path, use_container_width=False, width=300, caption=f"{title} Representation")
     else:
         st.warning(f"⚠️ Image not found: {image_path}")
 
