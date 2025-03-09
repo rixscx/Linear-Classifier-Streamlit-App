@@ -106,7 +106,3 @@ if st.button("🔍 Predict Diabetes"):
         st.error("🚨 **High Risk:** The person **may have diabetes**.")
     else:
         st.success("✅ **Low Risk:** The person **is unlikely to have diabetes**.")
-
-# Footer
-st.markdown("---")
-st.markdown('<p style="text-align:center; color:#888;">Developed by AI | Open-source on GitHub</p>', unsafe_allow_html=True)
