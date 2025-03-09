@@ -9,9 +9,10 @@ with open("diabetes_model.pkl", "rb") as model_file:
 # Set page configuration
 st.set_page_config(page_title="Diabetes Prediction", page_icon="⚕️", layout="centered")
 
-# Apply dark crimson red theme with custom styling
+# Apply dark crimson red theme with hover effects
 st.markdown("""
     <style>
+    /* Background and Text */
     body {
         background-color: #0d0d0d;
         color: #e0e0e0;
@@ -23,38 +24,52 @@ st.markdown("""
         border-radius: 10px;
         box-shadow: 0px 0px 20px rgba(139, 0, 0, 0.5);
     }
+    /* Title Styling */
     .stTitle {
         color: #8B0000;
         text-align: center;
         font-size: 36px;
         font-weight: bold;
         text-shadow: 2px 2px 8px rgba(139, 0, 0, 0.8);
+        transition: 0.3s ease-in-out;
     }
-    .stMarkdown {
-        color: #a0a0a0;
-        text-align: center;
+    .stTitle:hover {
+        text-shadow: 2px 2px 15px rgba(255, 0, 0, 0.9);
     }
+    /* Buttons */
     .stButton>button {
         background-color: #8B0000;
         color: black;
         font-size: 18px;
         padding: 12px;
         border-radius: 5px;
-        transition: 0.3s;
+        transition: all 0.3s ease-in-out;
         font-weight: bold;
         width: 100%;
+        border: none;
+        box-shadow: 0px 0px 10px rgba(139, 0, 0, 0.6);
     }
     .stButton>button:hover {
         background-color: #660000;
         color: white;
+        transform: scale(1.05);
+        box-shadow: 0px 0px 20px rgba(255, 0, 0, 0.8);
     }
+    /* Input Fields */
     input[type="number"] {
         background-color: #222;
         color: #8B0000;
         border-radius: 5px;
         border: 1px solid #8B0000;
         padding: 8px;
+        transition: 0.3s ease-in-out;
     }
+    input[type="number"]:hover, input[type="number"]:focus {
+        border: 1px solid #ff0000;
+        box-shadow: 0px 0px 10px rgba(255, 0, 0, 0.7);
+        transform: scale(1.02);
+    }
+    /* GitHub Fork Button */
     .github-btn {
         display: flex;
         justify-content: right;
