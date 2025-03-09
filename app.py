@@ -9,7 +9,7 @@ with open("diabetes_model.pkl", "rb") as model_file:
 # Set page configuration
 st.set_page_config(page_title="Diabetes Prediction", page_icon="⚕️", layout="centered")
 
-# Apply dark theme with custom styling
+# Apply dark red theme with custom styling
 st.markdown("""
     <style>
     body {
@@ -21,21 +21,21 @@ st.markdown("""
         background-color: #141414;
         padding: 30px;
         border-radius: 10px;
-        box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.3);
+        box-shadow: 0px 0px 15px rgba(255, 0, 0, 0.3);
     }
     .stTitle {
-        color: #00ffff;
+        color: #ff1a1a;
         text-align: center;
         font-size: 36px;
         font-weight: bold;
-        text-shadow: 2px 2px 5px rgba(0, 255, 255, 0.5);
+        text-shadow: 2px 2px 5px rgba(255, 0, 0, 0.5);
     }
     .stMarkdown {
         color: #a0a0a0;
         text-align: center;
     }
     .stButton>button {
-        background-color: #00ffff;
+        background-color: #ff1a1a;
         color: black;
         font-size: 18px;
         padding: 12px;
@@ -45,14 +45,14 @@ st.markdown("""
         width: 100%;
     }
     .stButton>button:hover {
-        background-color: #009999;
+        background-color: #cc0000;
         color: white;
     }
     input[type="number"] {
         background-color: #222;
-        color: #00ffff;
+        color: #ff1a1a;
         border-radius: 5px;
-        border: 1px solid #00ffff;
+        border: 1px solid #ff1a1a;
         padding: 8px;
     }
     .github-btn {
@@ -63,11 +63,11 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# GitHub Fork Button (with dark mode style)
+# GitHub Fork Button (Dark Mode Style)
 st.markdown("""
 <div class="github-btn">
     <a href="https://github.com/rixscx/Linear-Classifier-Streamlit-App/fork" target="_blank">
-        <img src="https://img.shields.io/github/forks/rixscx/Linear-Classifier-Streamlit-App?style=social&label=Fork%20on%20GitHub" alt="Fork me on GitHub">
+        <img src="https://img.shields.io/github/forks/rixscx/Linear-Classifier-Streamlit-App?style=social&label=Fork%20on%20GitHub&color=red" alt="Fork me on GitHub">
     </a>
 </div>
 """, unsafe_allow_html=True)
