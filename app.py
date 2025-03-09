@@ -24,7 +24,7 @@ st.markdown("""
         border-radius: 10px;
         box-shadow: 0px 0px 20px rgba(139, 0, 0, 0.5);
     }
-    /* Title Styling - NORMAL ALIGNMENT */
+    /* Title Styling */
     .stTitle {
         color: #8B0000;
         text-align: center;
@@ -32,7 +32,6 @@ st.markdown("""
         font-weight: bold;
         text-shadow: 2px 2px 8px rgba(139, 0, 0, 0.8);
         transition: 0.3s ease-in-out;
-        margin-top: 10px;
     }
     .stTitle:hover {
         text-shadow: 2px 2px 15px rgba(255, 0, 0, 0.9);
@@ -70,25 +69,23 @@ st.markdown("""
         box-shadow: 0px 0px 10px rgba(255, 0, 0, 0.7);
         transform: scale(1.02);
     }
-    /* Fork Button - Professionally Aligned */
+    /* Fork Button - Proper Alignment and Styling */
     .github-btn {
         position: absolute;
-        top: 15px;
-        right: 25px;
+        top: 20px;
+        right: 20px;
         background-color: #111;
-        padding: 12px 18px;
+        padding: 10px 15px;
         border-radius: 8px;
         box-shadow: 0px 0px 10px rgba(139, 0, 0, 0.6);
-        transition: all 0.3s ease-in-out;
-        border: 1px solid #8B0000;
+        transition: 0.3s ease-in-out;
     }
     .github-btn:hover {
         transform: scale(1.1);
         box-shadow: 0px 0px 15px rgba(255, 0, 0, 0.9);
-        border: 1px solid #ff0000;
     }
     .github-btn a {
-        color: #ff4d4d;
+        color: #8B0000;
         font-size: 16px;
         font-weight: bold;
         text-decoration: none;
@@ -99,7 +96,7 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# GitHub Fork Button (Enhanced Alignment)
+# GitHub Fork Button (Enhanced)
 st.markdown("""
 <div class="github-btn">
     <a href="https://github.com/rixscx/Linear-Classifier-Streamlit-App/fork" target="_blank">
@@ -108,20 +105,25 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-# Title - Now back to normal alignment
+# Title
 st.markdown('<h1 class="stTitle">Diabetes Prediction AI</h1>', unsafe_allow_html=True)
 
-st.write("Fill in the details below to predict the **likelihood of diabetes.**")
+st.markdown('<p class="stMarkdown">Fill in the details below to predict the likelihood of diabetes.</p>', unsafe_allow_html=True)
 
-# Input layout (NORMAL ALIGNMENT RESTORED)
-pregnancies = st.number_input("Pregnancies", min_value=0, max_value=20, value=1, step=1)
-glucose = st.number_input("Glucose Level", min_value=0, max_value=200, value=120, step=1)
-blood_pressure = st.number_input("Blood Pressure", min_value=0, max_value=140, value=70, step=1)
-skin_thickness = st.number_input("Skin Thickness", min_value=0, max_value=100, value=20, step=1)
-insulin = st.number_input("Insulin Level", min_value=0, max_value=500, value=80, step=1)
-bmi = st.number_input("BMI", min_value=0.0, max_value=50.0, value=25.0, step=0.1)
-diabetes_pedigree = st.number_input("Diabetes Pedigree Function", min_value=0.0, max_value=2.5, value=0.5, step=0.01)
-age = st.number_input("Age", min_value=1, max_value=120, value=30, step=1)
+# Input layout
+col1, col2 = st.columns(2)
+
+with col1:
+    pregnancies = st.number_input("Pregnancies", min_value=0, max_value=20, value=1, step=1)
+    glucose = st.number_input("Glucose Level", min_value=0, max_value=200, value=120, step=1)
+    blood_pressure = st.number_input("Blood Pressure", min_value=0, max_value=140, value=70, step=1)
+    skin_thickness = st.number_input("Skin Thickness", min_value=0, max_value=100, value=20, step=1)
+
+with col2:
+    insulin = st.number_input("Insulin Level", min_value=0, max_value=500, value=80, step=1)
+    bmi = st.number_input("BMI", min_value=0.0, max_value=50.0, value=25.0, step=0.1)
+    diabetes_pedigree = st.number_input("Diabetes Pedigree Function", min_value=0.0, max_value=2.5, value=0.5, step=0.01)
+    age = st.number_input("Age", min_value=1, max_value=120, value=30, step=1)
 
 # Prediction Button
 if st.button("🔍 Predict Diabetes"):
