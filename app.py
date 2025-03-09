@@ -110,10 +110,10 @@ st.markdown('<h1 class="stTitle">Diabetes Prediction AI</h1>', unsafe_allow_html
 
 st.write("Fill in the details below to predict the **likelihood of diabetes.**")
 
-# Sidebar - Help Button
+# Sidebar - Help Button (Fixed)
 st.sidebar.title("ℹ️ More Info")
 if st.sidebar.button("Learn About Inputs"):
-    st.switch_page("info.py")
+    st.markdown("[Click here to understand input values](https://github.com/rixscx/Linear-Classifier-Streamlit-App/blob/main/info.py)")
 
 # Input layout
 col1, col2 = st.columns(2)
