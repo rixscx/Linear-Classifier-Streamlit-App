@@ -24,6 +24,7 @@ st.markdown("""
         box-shadow: 0px 0px 15px rgba(255, 0, 0, 0.5);
         backdrop-filter: blur(10px);
         text-align: left;
+        margin-bottom: 20px;
     }
     .stTitle {
         color: #FF4500;
@@ -36,10 +37,6 @@ st.markdown("""
         font-size: 18px;
         line-height: 1.6;
     }
-    .image-container {
-        text-align: center;
-        margin: 20px 0;
-    }
     .image-caption {
         text-align: center;
         font-size: 14px;
@@ -51,66 +48,29 @@ st.markdown("""
 # Title
 st.markdown('<h1 class="stTitle">Understanding Input Values</h1>', unsafe_allow_html=True)
 
-st.markdown("""
-<div class="info-container">
-    <h3>Pregnancies</h3>
-    <p>Number of times a woman has been pregnant. For males, keep it at 0.</p>
-</div>
-""", unsafe_allow_html=True)
-st.image("https://www.link-to-pregnancy-image.com", use_column_width=True, caption="Pregnancy Count Representation")
+# Information sections with images
+info_data = [
+    ("Pregnancies", "Number of times a woman has been pregnant. For males, keep it at 0.", "https://example.com/pregnancy.png"),
+    ("Glucose Level", "Blood sugar concentration measured in mg/dL. Normal range: 70-140.", "https://example.com/glucose.png"),
+    ("Blood Pressure", "Systolic blood pressure (mm Hg). Normal: 80-120.", "https://example.com/bloodpressure.png"),
+    ("Skin Thickness", "Triceps skin fold thickness (mm), indicating body fat percentage.", "https://example.com/skin_thickness.png"),
+    ("Insulin Level", "Insulin in blood (µU/mL). Normal range: 15-276.", "https://example.com/insulin.png"),
+    ("BMI", "Body Mass Index (kg/m²). Normal: 18.5-24.9.", "https://example.com/bmi.png"),
+    ("Diabetes Pedigree Function", "A score indicating genetic diabetes risk (0.0-2.5).", "https://example.com/pedigree.png"),
+    ("Age", "Age in years. Higher age increases diabetes risk.", "https://example.com/age.png")
+]
 
-st.markdown("""
-<div class="info-container">
-    <h3>Glucose Level</h3>
-    <p>Blood sugar concentration measured in mg/dL. Normal range: 70-140.</p>
-</div>
-""", unsafe_allow_html=True)
-st.image("https://www.link-to-glucose-image.com", use_column_width=True, caption="Glucose Level Indicator")
+# Display sections dynamically
+for title, description, image_url in info_data:
+    st.markdown(f"""
+    <div class="info-container">
+        <h3>{title}</h3>
+        <p>{description}</p>
+    </div>
+    """, unsafe_allow_html=True)
+    st.image(image_url, use_container_width=True, caption=f"{title} Representation")
 
-st.markdown("""
-<div class="info-container">
-    <h3>Blood Pressure</h3>
-    <p>Systolic blood pressure (mm Hg). Normal: 80-120.</p>
-</div>
-""", unsafe_allow_html=True)
-st.image("https://www.link-to-bloodpressure-image.com", use_column_width=True, caption="Blood Pressure Measurement")
-
-st.markdown("""
-<div class="info-container">
-    <h3>Skin Thickness</h3>
-    <p>Triceps skin fold thickness (mm), indicating body fat percentage.</p>
-</div>
-""", unsafe_allow_html=True)
-
-st.markdown("""
-<div class="info-container">
-    <h3>Insulin Level</h3>
-    <p>Insulin in blood (µU/mL). Normal range: 15-276.</p>
-</div>
-""", unsafe_allow_html=True)
-
-st.markdown("""
-<div class="info-container">
-    <h3>BMI</h3>
-    <p>Body Mass Index (kg/m²). Normal: 18.5-24.9.</p>
-</div>
-""", unsafe_allow_html=True)
-st.image("https://www.link-to-bmi-image.com", use_column_width=True, caption="BMI Chart")
-
-st.markdown("""
-<div class="info-container">
-    <h3>Diabetes Pedigree Function</h3>
-    <p>A score indicating genetic diabetes risk (0.0-2.5).</p>
-</div>
-""", unsafe_allow_html=True)
-
-st.markdown("""
-<div class="info-container">
-    <h3>Age</h3>
-    <p>Age in years. Higher age increases diabetes risk.</p>
-</div>
-""", unsafe_allow_html=True)
-
+# Final health warning
 st.markdown("""
     <br>
     <h2 style="color:#FF4500; text-align:center;">⚠️ If glucose, insulin, or BMI is high, consult a doctor.</h2>
