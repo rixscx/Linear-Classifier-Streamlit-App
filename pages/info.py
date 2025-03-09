@@ -52,24 +52,16 @@ st.markdown('<h1 class="stTitle">Understanding Input Values</h1>', unsafe_allow_
 # Define the local path for images
 IMAGE_DIR = "Images"
 
-# Debugging - Print working directory and available files
-st.write("📂 **Current Working Directory:**", os.getcwd())
-
-if os.path.exists(IMAGE_DIR):
-    st.write("📁 **Available Images:**", os.listdir(IMAGE_DIR))
-else:
-    st.error(f"🚨 Directory not found: {IMAGE_DIR}")
-
 # Information sections with local images
 info_data = [
     ("Pregnancies", "Number of times a woman has been pregnant. For males, keep it at 0.", "pregnancies.png"),
     ("Glucose Level", "Blood sugar concentration measured in mg/dL. Normal range: 70-140.", "glucose.png"),
     ("Blood Pressure", "Systolic blood pressure (mm Hg). Normal: 80-120.", "blood_pressure.png"),
-    ("Skin Thickness", "Triceps skin fold thickness (mm), indicating body fat percentage.", "skin_thickness.png"),
+    ("Skin Thickness", "Triceps skin fold thickness (mm), indicating body fat percentage.", "skin_thickness.jpg"),
     ("Insulin Level", "Insulin in blood (µU/mL). Normal range: 15-276.", "insulin.png"),
     ("BMI", "Body Mass Index (kg/m²). Normal: 18.5-24.9.", "bmi.png"),
     ("Diabetes Pedigree Function", "A score indicating genetic diabetes risk (0.0-2.5).", "pedigree.png"),
-    ("Age", "Age in years. Higher age increases diabetes risk.", "age.png")
+    ("Age", "Age in years. Higher age increases diabetes risk.", "age.jpg")
 ]
 
 # Display sections dynamically
