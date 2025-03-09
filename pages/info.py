@@ -3,7 +3,10 @@ import streamlit as st
 # Set page configuration
 st.set_page_config(page_title="Diabetes Input Guide", page_icon="📘", layout="centered")
 
-# Apply modern UI with neon-glass effect
+# Define the GitHub raw URL for images
+GITHUB_IMAGE_BASE_URL = "https://raw.githubusercontent.com/rixscx/Linear-Classifier-Streamlit-App/main/Images/"
+
+# Custom CSS for modern UI
 st.markdown("""
     <style>
     body {
@@ -24,7 +27,6 @@ st.markdown("""
         box-shadow: 0px 0px 15px rgba(255, 0, 0, 0.5);
         backdrop-filter: blur(10px);
         text-align: left;
-        margin-bottom: 20px;
     }
     .stTitle {
         color: #FF4500;
@@ -37,40 +39,35 @@ st.markdown("""
         font-size: 18px;
         line-height: 1.6;
     }
-    .image-caption {
-        text-align: center;
-        font-size: 14px;
-        color: #b0b0b0;
-    }
     </style>
 """, unsafe_allow_html=True)
 
 # Title
 st.markdown('<h1 class="stTitle">Understanding Input Values</h1>', unsafe_allow_html=True)
 
-# Information sections with images
-info_data = [
-    ("Pregnancies", "Number of times a woman has been pregnant. For males, keep it at 0.", "https://example.com/pregnancy.png"),
-    ("Glucose Level", "Blood sugar concentration measured in mg/dL. Normal range: 70-140.", "https://example.com/glucose.png"),
-    ("Blood Pressure", "Systolic blood pressure (mm Hg). Normal: 80-120.", "https://example.com/bloodpressure.png"),
-    ("Skin Thickness", "Triceps skin fold thickness (mm), indicating body fat percentage.", "https://example.com/skin_thickness.png"),
-    ("Insulin Level", "Insulin in blood (µU/mL). Normal range: 15-276.", "https://example.com/insulin.png"),
-    ("BMI", "Body Mass Index (kg/m²). Normal: 18.5-24.9.", "https://example.com/bmi.png"),
-    ("Diabetes Pedigree Function", "A score indicating genetic diabetes risk (0.0-2.5).", "https://example.com/pedigree.png"),
-    ("Age", "Age in years. Higher age increases diabetes risk.", "https://example.com/age.png")
-]
+st.markdown('<div class="info-container">', unsafe_allow_html=True)
 
-# Display sections dynamically
-for title, description, image_url in info_data:
-    st.markdown(f"""
-    <div class="info-container">
-        <h3>{title}</h3>
-        <p>{description}</p>
-    </div>
-    """, unsafe_allow_html=True)
-    st.image(image_url, use_container_width=True, caption=f"{title} Representation")
+# Information with images
+info_data = {
+    "Pregnancies": ("Number of times a woman has been pregnant. For males, keep it at 0.", "pregnancies.png"),
+    "Glucose Level": ("Blood sugar concentration measured in mg/dL. Normal range: 70-140.", "glucose.png"),
+    "Blood Pressure": ("Systolic blood pressure (mm Hg). Normal: 80-120.", "blood_pressure.png"),
+    "Skin Thickness": ("Triceps skin fold thickness (mm), indicating body fat percentage.", "skin_thickness.png"),
+    "Insulin Level": ("Insulin in blood (µU/mL). Normal range: 15-276.", "insulin.png"),
+    "BMI": ("Body Mass Index (kg/m²). Normal: 18.5-24.9.", "bmi.png"),
+    "Diabetes Pedigree Function": ("A score indicating genetic diabetes risk (0.0-2.5).", "pedigree.png"),
+    "Age": ("Age in years. Higher age increases diabetes risk.", "age.png")
+}
 
-# Final health warning
+# Display each section with an image
+for key, (description, image_name) in info_data.items():
+    st.subheader(key)
+    st.write(description)
+    st.image(GITHUB_IMAGE_BASE_URL + image_name, use_container_width=True)
+
+st.markdown('</div>', unsafe_allow_html=True)
+
+# Warning message
 st.markdown("""
     <br>
     <h2 style="color:#FF4500; text-align:center;">⚠️ If glucose, insulin, or BMI is high, consult a doctor.</h2>
